@@ -21,7 +21,7 @@ public class Song {
     private String titel;
 
     @Column(name = "size")
-    private Float size;
+    private Long size;
 
     @Column(name = "track")
     private Integer track;
@@ -55,7 +55,7 @@ public class Song {
     private Artist artist;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = {})
+    @JsonIgnoreProperties(value = {"image", "artist"}, allowGetters = true)
     @JoinColumn(name = "album_id")
     private Album album;
 
